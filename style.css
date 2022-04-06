@@ -5,37 +5,47 @@
     list-style: none;
     text-decoration: none;
 }
-header{
-    text-align: center;
+body{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.navegador{
-    height: 80px;
-    display: flex;
+.navbar{
+    height: 150px;
+    /* display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center; */
     list-style-type: none;
-    background-color: lightskyblue;
-}
-li{
-    margin: 50px;
-    text-decoration:none;
+    text-align: right;
+    grid-area: header;
 }
 li a{
     text-decoration: none;
-    color: black;
+    color: white;
+    text-align: center;    
 }
-
+li a:hover{
+    color: #f2f2f2;
+    background-color: black;
+    border-radius: 15px;
+}
 .logo{ 
     height: 21vh;
-}
-body{
-    background-color: linen;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 h1{
     text-align: center;
 }
-
+.carousel{
+    height: 500px;
+}
+.carousel img{
+    height: 500px;
+}
 footer{
     background-color: black;
     color: white;
@@ -45,15 +55,22 @@ footer{
     margin: 30px;
 }
 .caja{
-    height: 55px;
+    height: 65px;
     background-color: azure;
     border: 10px solid;
 }
-.form{
-    background-color: lightskyblue;
-    color: white;
-    border: 3px solid white;
-    height: 400px;
+.formulario{
+    text-align:justify;
+
+}
+.formulario label{
+    background-color: aqua;
+    text-align: center;
+}
+.galeria{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .imagenes{
     width: 100%;
@@ -77,15 +94,11 @@ img{
 }
 
 @media only screen and (max-width: 500px){
-.navegador{    
-    display: flex;
-    justify-content: space-evenly;
+.navbar{    
     align-items: center;
     list-style-type: none;
-    background-color: lightskyblue;
     flex-wrap: wrap;
-    align-content: center;
-    height: 170px;
+    grid-area: header;
 }
 img{
     height: 200px;
@@ -102,5 +115,12 @@ img{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+}
+.galeria{
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    grid-area: footer;
 }
 }
